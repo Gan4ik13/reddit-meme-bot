@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: reddit-meme-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_bot.py
+    envVars:
+      - key: TG_BOT_TOKEN
+        sync: false
+      - key: TG_CHANNEL
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.12.0"
