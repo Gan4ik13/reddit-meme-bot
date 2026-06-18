@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Reddit Meme Telegram Bot — Render.com deployment.
+"""VK Meme Telegram Bot — Render.com deployment.
 
-Берёт лучшие посты с Reddit (юмор, мемы, программисты)
-и постит в Telegram канал раз в час.
+Берёт лучшие мемы из VK пабликов и постит в Telegram канал.
 """
 
 import os
@@ -39,25 +38,23 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 TG_CHANNEL = os.environ.get("TG_CHANNEL", "")
 PORT = int(os.environ.get("PORT", 8080))
 
-REDDIT_SUBREDDITS = [
-    "ProgrammerHumor",
-    "memes",
-    "dankmemes",
-    "funny",
-    "me_irl",
-    "techhumor",
-    "SoftwareGore",
-    "Bossfight",
-    "tifu",
-    "whitepeoplegifs",
+VK_ACCESS_TOKEN = os.environ.get("VK_ACCESS_TOKEN", "")
+
+VK_GROUPS = [
+    -23811351,
+    -178542337,
+    -127517820,
+    -36458093,
+    -38131646,
+    -151052765,
+    -217498432,
+    -171520934,
+    -19985991,
+    -30496112,
 ]
 
-REDDIT_SORT = "hot"
-REDDIT_TIMEFRAME = "day"
-MIN_SCORE = 100
-
-REDDIT_CLIENT_ID = os.environ.get("REDDIT_CLIENT_ID", "")
-REDDIT_CLIENT_SECRET = os.environ.get("REDDIT_CLIENT_SECRET", "")
+MIN_LIKES = 50
+POSTS_PER_GROUP = 30
 
 # ============================================================
 #  SQLite
@@ -74,25 +71,25 @@ def _init_db():
     _conn.executescript("""
         CREATE TABLE IF NOT EXISTS posts (
             id            INTEGER PRIMARY KEY AUTOINCREMENT,
-            reddit_id     TEXT UNIQUE,
+            vk_post_id    TEXT UNIQUE,
             title         TEXT NOT NULL,
             image_url     TEXT,
             source_url    TEXT,
-            score         INTEGER DEFAULT 0,
+            likes         INTEGER DEFAULT 0,
             status        TEXT NOT NULL DEFAULT 'pending',
             created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             published_at  TIMESTAMP
         );
         CREATE INDEX IF NOT EXISTS idx_posts_status ON posts(status, created_at);
-        CREATE INDEX IF NOT EXISTS idx_posts_reddit ON posts(reddit_id);
+        CREATE INDEX IF NOT EXISTS idx_posts_vk ON posts(vk_post_id);
     """)
 
 
-def _add_reddit_post(reddit_id: str, title: str, image_url: str, source_url: str, score: int) -> bool:
+def _add_vk_post(vk_post_id: str, title: str, image_url: str, source_url: str, likes: int) -> bool:
     try:
         _conn.execute(
-            "INSERT OR IGNORE INTO posts (reddit_id, title, image_url, source_url, score, status) VALUES (?, ?, ?, ?, ?, 'pending')",
-            (reddit_id, title, image_url, source_url, score),
+            "INSERT OR IGNORE INTO posts (vk_post_id, title, image_url, source_url, likes, status) VALUES (?, ?, ?, ?, ?, 'pending')",
+            (vk_post_id, title, image_url, source_url, likes),
         )
         _conn.commit()
         return _conn.total_changes > 0
@@ -102,7 +99,7 @@ def _add_reddit_post(reddit_id: str, title: str, image_url: str, source_url: str
 
 def _get_pending():
     cur = _conn.execute(
-        "SELECT id, title, image_url, source_url FROM posts WHERE status='pending' ORDER BY score DESC LIMIT 1"
+        "SELECT id, title, image_url, source_url FROM posts WHERE status='pending' ORDER BY likes DESC LIMIT 1"
     )
     row = cur.fetchone()
     return (row["id"], row["title"], row["image_url"], row["source_url"]) if row else None
@@ -126,109 +123,98 @@ def _pending_count() -> int:
 
 
 # ============================================================
-#  Reddit API (без авторизации — публичные посты)
+#  VK API
 # ============================================================
 
-_reddit_token = None
-_reddit_token_time = 0
-
-
-def _get_reddit_token() -> str:
-    global _reddit_token, _reddit_token_time
-    if _reddit_token and time.time() - _reddit_token_time < 3500:
-        return _reddit_token
-    auth = requests.auth.HTTPBasicAuth(REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET)
-    resp = requests.post(
-        "https://www.reddit.com/api/v1/access_token",
-        data={"grant_type": "client_credentials"},
-        auth=auth,
-        headers={"User-Agent": "TelegramMemeBot/1.0"},
-        timeout=15,
-    )
-    resp.raise_for_status()
-    _reddit_token = resp.json()["access_token"]
-    _reddit_token_time = time.time()
-    return _reddit_token
-
-
-def _fetch_reddit_posts(subreddit: str, sort: str = "hot", limit: int = 25) -> list[dict]:
-    token = _get_reddit_token()
-    url = f"https://oauth.reddit.com/r/{subreddit}/{sort}?limit={limit}&t=day"
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "User-Agent": "TelegramMemeBot/1.0",
+def _fetch_vk_posts(owner_id: int, count: int = POSTS_PER_GROUP) -> list[dict]:
+    url = "https://api.vk.com/method/wall.get"
+    params = {
+        "owner_id": owner_id,
+        "count": count,
+        "filter": "owner",
+        "access_token": VK_ACCESS_TOKEN,
+        "v": "5.199",
     }
     try:
-        resp = requests.get(url, headers=headers, timeout=15)
+        resp = requests.get(url, params=params, timeout=15)
         resp.raise_for_status()
         data = resp.json()
+        if "error" in data:
+            log.warning("VK API error for %s: %s", owner_id, data["error"].get("error_msg", ""))
+            return []
+        items = data.get("response", {}).get("items", [])
         posts = []
-        for child in data.get("data", {}).get("children", []):
-            post = child.get("data", {})
-            if post.get("stickied"):
+        for item in items:
+            if item.get("is_pinned"):
                 continue
-            permalink = post.get("permalink", "")
-            image_url = _extract_image_url(post)
+            if item.get("marked_as_ads"):
+                continue
+            text = item.get("text", "")
+            attachments = item.get("attachments", [])
+            image_url = _extract_vk_image(attachments)
             if not image_url:
                 continue
+            likes = item.get("likes", {}).get("count", 0)
+            if likes < MIN_LIKES:
+                continue
+            post_url = f"https://vk.com/wall{owner_id}_{item['id']}"
+            title = _clean_vk_text(text)
+            if not title:
+                title = "Мем из VK"
             posts.append({
-                "reddit_id": post.get("id", ""),
-                "title": post.get("title", ""),
+                "vk_post_id": f"{owner_id}_{item['id']}",
+                "title": title,
                 "image_url": image_url,
-                "source_url": f"https://reddit.com{permalink}",
-                "score": post.get("score", 0),
+                "source_url": post_url,
+                "likes": likes,
             })
         return posts
     except Exception as e:
-        log.warning("Reddit fetch error (%s): %s", subreddit, e)
+        log.warning("VK fetch error (%s): %s", owner_id, e)
         return []
 
 
-def _extract_image_url(post: dict) -> str | None:
-    url = post.get("url_overridden_by_dest") or post.get("url", "")
-    if not url:
-        return None
-    if url.endswith((".jpg", ".jpeg", ".png", ".gif", ".webp")):
-        return url
-    if "i.redd.it" in url:
-        return url
-    if "imgur.com" in url:
-        if "/a/" in url or "/gallery/" in url:
-            return None
-        if not url.endswith((".jpg", ".jpeg", ".png", ".gif", ".webp")):
-            url = url + ".jpg"
-        return url
-    if post.get("preview", {}).get("images"):
-        source = post["preview"]["images"][0].get("source", {})
-        src_url = source.get("url", "").replace("&amp;", "&")
-        if src_url:
-            return src_url
-    if post.get("thumbnail") in ("self", "default", "nsfw", "spoiler"):
-        return None
-    if post.get("thumbnail", "").startswith("http"):
-        return post["thumbnail"]
+def _extract_vk_image(attachments: list) -> str | None:
+    for att in attachments:
+        att_type = att.get("type", "")
+        if att_type == "photo":
+            sizes = att.get("photo", {}).get("sizes", [])
+            best = None
+            for s in sizes:
+                if s.get("type") in ("w", "z", "y", "x"):
+                    best = s.get("url")
+            if best:
+                return best
+            if sizes:
+                return sizes[-1].get("url")
+        elif att_type == "doc" and att.get("doc", {}).get("type") == 6:
+            return att["doc"].get("url")
     return None
 
 
-def _fetch_all_reddit() -> int:
+def _clean_vk_text(text: str) -> str:
+    text = re.sub(r"\[.*?\|.*?\]", "", text)
+    text = re.sub(r"https?://\S+", "", text)
+    text = re.sub(r"#\S+", "", text)
+    text = text.strip()
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
+    return lines[0][:200] if lines else ""
+
+
+def _fetch_all_vk() -> int:
     added = 0
-    for sub in REDDIT_SUBREDDITS:
-        posts = _fetch_reddit_posts(sub, REDDIT_SORT, 25)
+    for group_id in VK_GROUPS:
+        posts = _fetch_vk_posts(group_id, POSTS_PER_GROUP)
         for p in posts:
-            if p["score"] >= MIN_SCORE:
-                if _add_reddit_post(p["reddit_id"], p["title"], p["image_url"], p["source_url"], p["score"]):
-                    added += 1
-        time.sleep(1)
+            if _add_vk_post(p["vk_post_id"], p["title"], p["image_url"], p["source_url"], p["likes"]):
+                added += 1
+        time.sleep(0.5)
     return added
 
 
 # ============================================================
 #  Публикация в Telegram
 # ============================================================
-
-def _format_caption(title: str, source_url: str) -> str:
-    return title
-
 
 def _send_photo(image_url: str, caption: str) -> bool:
     url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendPhoto"
@@ -244,8 +230,8 @@ def _send_photo(image_url: str, caption: str) -> bool:
         if data.get("ok"):
             return True
         error = data.get("description", "")
-        if "wrong type of photo" in str(error).lower() or "failed to get http url content" in str(error).lower():
-            log.warning("Photo failed, trying as document: %s", error[:100])
+        if "wrong type" in str(error).lower() or "failed to get" in str(error).lower():
+            log.warning("Photo failed, trying document: %s", error[:100])
             return _send_document(image_url, caption)
         log.error("Telegram photo API: %s", error[:200])
     except Exception as e:
@@ -263,28 +249,9 @@ def _send_document(file_url: str, caption: str) -> bool:
     try:
         resp = requests.post(url, json=payload, timeout=30)
         resp.raise_for_status()
-        data = resp.json()
-        if data.get("ok"):
-            return True
-        log.error("Telegram document API: %s", data.get("description", "")[:200])
-    except Exception as e:
-        log.error("Document send error: %s", e)
-    return False
-
-
-def _send_text(text: str) -> bool:
-    url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
-    payload = {
-        "chat_id": TG_CHANNEL,
-        "text": text,
-        "disable_web_page_preview": True,
-    }
-    try:
-        resp = requests.post(url, json=payload, timeout=30)
-        resp.raise_for_status()
         return resp.json().get("ok", False)
     except Exception as e:
-        log.error("Text send error: %s", e)
+        log.error("Document send error: %s", e)
     return False
 
 
@@ -300,8 +267,7 @@ def job_sourcing():
     if _pending_count() >= MIN_QUEUE:
         log.info("Очередь полная, пропускаем")
         return
-
-    added = _fetch_all_reddit()
+    added = _fetch_all_vk()
     log.info("=== SOURCING: добавлено %d (всего: %d) ===", added, _pending_count())
 
 
@@ -309,7 +275,7 @@ def job_publishing():
     log.info("=== PUBLISHING ===")
     result = _get_pending()
     if not result:
-        log.info("Очередь пуста, запускаем sourcing...")
+        log.info("Очередь пуста, sourcing...")
         job_sourcing()
         result = _get_pending()
         if not result:
@@ -317,10 +283,9 @@ def job_publishing():
             return
 
     post_id, title, image_url, source_url = result
-    caption = _format_caption(title, source_url)
     log.info("Публикуем: %s", title[:60])
 
-    if _send_photo(image_url, caption):
+    if _send_photo(image_url, title):
         _mark_published(post_id)
         log.info("Опубликовано! В очереди: %d", _pending_count())
     else:
@@ -341,7 +306,7 @@ async def handle_health(request):
 
 
 async def handle_root(request):
-    return aiohttp.web.json_response({"status": "ok", "bot": "reddit-meme-bot"})
+    return aiohttp.web.json_response({"status": "ok", "bot": "vk-meme-bot"})
 
 
 async def self_ping():
@@ -369,10 +334,13 @@ def main():
     if not TG_CHANNEL:
         log.error("TG_CHANNEL не задан!")
         sys.exit(1)
+    if not VK_ACCESS_TOKEN:
+        log.error("VK_ACCESS_TOKEN не задан!")
+        sys.exit(1)
 
     _init_db()
     log.info("Бот запущен. Канал: %s", TG_CHANNEL)
-    log.info("Сабреддиты: %s", ", ".join(REDDIT_SUBREDDITS))
+    log.info("VK пабликов: %d", len(VK_GROUPS))
     log.info("Очередь: %d постов", _pending_count())
 
     app = aiohttp.web.Application()
