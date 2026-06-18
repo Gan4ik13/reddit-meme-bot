@@ -56,6 +56,9 @@ REDDIT_SORT = "hot"
 REDDIT_TIMEFRAME = "day"
 MIN_SCORE = 100
 
+REDDIT_CLIENT_ID = os.environ.get("REDDIT_CLIENT_ID", "")
+REDDIT_CLIENT_SECRET = os.environ.get("REDDIT_CLIENT_SECRET", "")
+
 # ============================================================
 #  SQLite
 # ============================================================
@@ -126,9 +129,35 @@ def _pending_count() -> int:
 #  Reddit API (без авторизации — публичные посты)
 # ============================================================
 
+_reddit_token = None
+_reddit_token_time = 0
+
+
+def _get_reddit_token() -> str:
+    global _reddit_token, _reddit_token_time
+    if _reddit_token and time.time() - _reddit_token_time < 3500:
+        return _reddit_token
+    auth = requests.auth.HTTPBasicAuth(REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET)
+    resp = requests.post(
+        "https://www.reddit.com/api/v1/access_token",
+        data={"grant_type": "client_credentials"},
+        auth=auth,
+        headers={"User-Agent": "TelegramMemeBot/1.0"},
+        timeout=15,
+    )
+    resp.raise_for_status()
+    _reddit_token = resp.json()["access_token"]
+    _reddit_token_time = time.time()
+    return _reddit_token
+
+
 def _fetch_reddit_posts(subreddit: str, sort: str = "hot", limit: int = 25) -> list[dict]:
-    url = f"https://www.reddit.com/r/{subreddit}/{sort}.json?limit={limit}&t=day"
-    headers = {"User-Agent": "TelegramMemeBot/1.0"}
+    token = _get_reddit_token()
+    url = f"https://oauth.reddit.com/r/{subreddit}/{sort}?limit={limit}&t=day"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "User-Agent": "TelegramMemeBot/1.0",
+    }
     try:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
@@ -137,8 +166,6 @@ def _fetch_reddit_posts(subreddit: str, sort: str = "hot", limit: int = 25) -> l
         for child in data.get("data", {}).get("children", []):
             post = child.get("data", {})
             if post.get("stickied"):
-                continue
-            if post.get("is_self") and not post.get("url_overridden_by_dest"):
                 continue
             permalink = post.get("permalink", "")
             image_url = _extract_image_url(post)
