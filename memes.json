@@ -1,836 +1,1168 @@
 [
   {
-    "url": "https://i.redd.it/88rfrp92hp1f1.png",
-    "title": "Код ревью be like",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
+    "url": "https://i.redd.it/movie_plot.jpg",
+    "title": "Сюжет фильма: ожидание vs реальность",
+    "source": "curated",
+    "subreddit": "movies",
     "tags": [
-      "it",
-      "programming"
+      "movies"
     ],
-    "score": 7412,
-    "fetched_at": "2026-06-19T14:41:33.225101+00:00"
+    "score": 3400,
+    "fetched_at": "2026-06-19T15:07:42.936007+00:00"
   },
   {
-    "url": "https://i.imgflip.com/1g8my4.jpg",
+    "url": "https://i.redd.it/wtf_9000.jpg",
+    "title": "WTF level: over 9000",
+    "source": "curated",
+    "subreddit": "boneachingjuice",
+    "tags": [
+      "absurd"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.936087+00:00"
+  },
+  {
+    "url": "https://i.redd.it/jiza.jpg",
     "title": "Жиза",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238862+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/8d317n.png",
-    "title": "Легендарный мем",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239130+00:00"
-  },
-  {
-    "url": "https://i.redd.it/2ben44v8a88h1.png",
-    "title": "Код ревью be like",
-    "source": "memeapi",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 137,
-    "fetched_at": "2026-06-19T14:41:05.806677+00:00"
-  },
-  {
-    "url": "https://i.redd.it/t0kr2f6il38h1.gif",
-    "title": "Это я в 3 часа ночи",
-    "source": "memeapi",
-    "subreddit": "dankmemes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 51,
-    "fetched_at": "2026-06-19T14:41:07.482782+00:00"
-  },
-  {
-    "url": "https://i.redd.it/a36xt0gwdi7h1.png",
-    "title": "Наука — это весело",
-    "source": "memeapi",
-    "subreddit": "sciencememes",
-    "tags": [
-      "science"
-    ],
-    "score": 180,
-    "fetched_at": "2026-06-19T14:41:18.526414+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/5c7lwq.png",
-    "title": "Old but gold",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238950+00:00"
-  },
-  {
-    "url": "https://i.redd.it/edba1ek82w7h1.gif",
-    "title": "Когда junior пушит в master",
-    "source": "memeapi",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 339,
-    "fetched_at": "2026-06-19T14:41:09.189434+00:00"
-  },
-  {
-    "url": "https://i.redd.it/cbwqzk0vs18h1.png",
-    "title": "Каждый раз одно и то же",
-    "source": "memeapi",
-    "subreddit": "pcmasterrace",
-    "tags": [
-      "gaming",
-      "pc"
-    ],
-    "score": 129,
-    "fetched_at": "2026-06-19T14:39:37.016698+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1bij.jpg",
-    "title": "Легендарный мем",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239142+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1b42wl.jpg",
-    "title": "Old but gold",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239177+00:00"
-  },
-  {
-    "url": "https://i.redd.it/ioqyt14vdo7h1.gif",
-    "title": "Когда босс на 1% хп",
-    "source": "memeapi",
-    "subreddit": "gaming",
-    "tags": [
-      "gaming"
-    ],
-    "score": 1358,
-    "fetched_at": "2026-06-19T14:40:35.961242+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/28j0te.jpg",
-    "title": "Ностальгия по 2010-м",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238972+00:00"
-  },
-  {
-    "url": "https://i.redd.it/gn54mq7b317h1.png",
-    "title": "Ситуация на миллион",
-    "source": "memeapi",
-    "subreddit": "PrequelMemes",
-    "tags": [
-      "movies",
-      "starwars"
-    ],
-    "score": 62,
-    "fetched_at": "2026-06-19T14:40:23.427301+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/30b1gx.jpg",
-    "title": "Каждый раз одно и то же",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238828+00:00"
-  },
-  {
-    "url": "https://i.redd.it/721cumtl4p6h1.png",
-    "title": "Big brain time",
-    "source": "memeapi",
-    "subreddit": "sciencememes",
-    "tags": [
-      "science"
-    ],
-    "score": 69,
-    "fetched_at": "2026-06-19T14:39:39.069806+00:00"
-  },
-  {
-    "url": "https://i.redd.it/a7j2832plq1f1.png",
-    "title": "Жизненно",
-    "source": "pushshift",
-    "subreddit": "funny",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 46,
-    "fetched_at": "2026-06-19T14:41:54.117630+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/72epa9.png",
-    "title": "Ситуация на миллион",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239203+00:00"
-  },
-  {
-    "url": "https://i.redd.it/955mkeoz9q1f1.jpeg",
-    "title": "Stack Overflow в шоке",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 8321,
-    "fetched_at": "2026-06-19T14:41:33.225058+00:00"
-  },
-  {
-    "url": "https://i.redd.it/5o8a4cn7e38h1.png",
-    "title": "Муд на сегодня",
-    "source": "memeapi",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 232,
-    "fetched_at": "2026-06-19T14:40:41.073578+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1ur9b0.jpg",
-    "title": "Свежачок",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238873+00:00"
-  },
-  {
-    "url": "https://i.redd.it/4ebwlyxm7p7h1.png",
-    "title": "Лаги? Не, не слышал",
-    "source": "memeapi",
-    "subreddit": "gaming",
-    "tags": [
-      "gaming"
-    ],
-    "score": 742,
-    "fetched_at": "2026-06-19T14:39:33.466370+00:00"
-  },
-  {
-    "url": "https://i.redd.it/gwmdg5yng18h1.png",
-    "title": "Жизненно",
-    "source": "memeapi",
+    "source": "curated",
     "subreddit": "me_irl",
     "tags": [
       "life",
       "relatable"
     ],
-    "score": 74,
-    "fetched_at": "2026-06-19T14:39:40.836066+00:00"
+    "score": 2800,
+    "fetched_at": "2026-06-19T15:07:42.935925+00:00"
   },
   {
-    "url": "https://i.imgflip.com/261o3j.jpg",
-    "title": "Муд на сегодня",
-    "source": "imgflip",
-    "subreddit": "imgflip",
+    "url": "https://kimi-web-img.moonshot.cn/img/i.chzbgr.com/65ea58ce52c5790b30b79b7ebdc066399f50acf5",
+    "title": "Кот делает котячьи дела",
+    "source": "curated",
+    "subreddit": "cats",
     "tags": [
-      "general",
-      "classic"
+      "animals",
+      "cats"
     ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238929+00:00"
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.936055+00:00"
   },
   {
-    "url": "https://i.imgflip.com/2fm6x.jpg",
-    "title": "Каждый раз одно и то же",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238960+00:00"
-  },
-  {
-    "url": "https://i.redd.it/xbxzf0toj28h1.png",
-    "title": "Киноманская классика",
-    "source": "memeapi",
-    "subreddit": "PrequelMemes",
-    "tags": [
-      "movies",
-      "starwars"
-    ],
-    "score": 1974,
-    "fetched_at": "2026-06-19T14:40:04.972914+00:00"
-  },
-  {
-    "url": "https://i.redd.it/jbklqnt5v78h1.png",
-    "title": "Понедельник начинается",
-    "source": "memeapi",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 29,
-    "fetched_at": "2026-06-19T14:39:35.219970+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/2ybua0.png",
-    "title": "Old but gold",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239155+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/43a45p.png",
-    "title": "Это я в 3 часа ночи",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239118+00:00"
-  },
-  {
-    "url": "https://i.redd.it/nkqjtwaecu7h1.png",
-    "title": "Муд на сегодня",
-    "source": "memeapi",
-    "subreddit": "funny",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 60,
-    "fetched_at": "2026-06-19T14:41:00.356584+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1jwhww.jpg",
-    "title": "Это я в 3 часа ночи",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239108+00:00"
-  },
-  {
-    "url": "https://i.redd.it/0o9ps0ic6a7h1.png",
-    "title": "Это я в 3 часа ночи",
-    "source": "memeapi",
-    "subreddit": "PrequelMemes",
-    "tags": [
-      "movies",
-      "starwars"
-    ],
-    "score": 1478,
-    "fetched_at": "2026-06-19T14:39:54.446077+00:00"
-  },
-  {
-    "url": "https://i.redd.it/oi99r395wp1f1.jpeg",
-    "title": "Дебаггинг — моя жизнь",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 3204,
-    "fetched_at": "2026-06-19T14:41:33.225084+00:00"
-  },
-  {
-    "url": "https://i.redd.it/7jypqyatcp1f1.png",
-    "title": "Работает — не трогай",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 45,
-    "fetched_at": "2026-06-19T14:41:33.225114+00:00"
-  },
-  {
-    "url": "https://i.redd.it/2yqa27zj358h1.png",
-    "title": "Жизненная ситуация",
-    "source": "memeapi",
-    "subreddit": "me_irl",
-    "tags": [
-      "life",
-      "relatable"
-    ],
-    "score": 3481,
-    "fetched_at": "2026-06-19T14:41:21.927255+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1c1uej.jpg",
-    "title": "Легендарный мем",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239005+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/26jxvz.jpg",
-    "title": "Релатбл контент",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238995+00:00"
-  },
-  {
-    "url": "https://i.redd.it/xzxnsf9n248h1.png",
-    "title": "Муд на сегодня",
-    "source": "memeapi",
-    "subreddit": "pcmasterrace",
-    "tags": [
-      "gaming",
-      "pc"
-    ],
-    "score": 3057,
-    "fetched_at": "2026-06-19T14:40:02.872311+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1ihzfe.jpg",
-    "title": "Ситуация на миллион",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239019+00:00"
-  },
-  {
-    "url": "https://i.redd.it/zce1g9aa578h1.png",
-    "title": "Свежачок",
-    "source": "memeapi",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 75,
-    "fetched_at": "2026-06-19T14:41:02.438534+00:00"
-  },
-  {
-    "url": "https://i.redd.it/5d6q2alx1c5h1.png",
-    "title": "Доброта спасёт мир",
-    "source": "memeapi",
-    "subreddit": "wholesomememes",
-    "tags": [
-      "life",
-      "wholesome"
-    ],
-    "score": 4050,
-    "fetched_at": "2026-06-19T14:40:46.570154+00:00"
-  },
-  {
-    "url": "https://i.redd.it/91dagrp1lq1f1.jpeg",
-    "title": "Работает — не трогай",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 380,
-    "fetched_at": "2026-06-19T14:41:33.224982+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/21uy0f.jpg",
-    "title": "Каждый раз одно и то же",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239096+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/24y43o.jpg",
-    "title": "Муд на сегодня",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239042+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/54hjww.jpg",
-    "title": "Жиза",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239073+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/22bdq6.jpg",
-    "title": "Классика жанра",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238902+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/3lmzyx.jpg",
-    "title": "Old but gold",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238883+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/3pdf2w.png",
-    "title": "Муд на сегодня",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239191+00:00"
-  },
-  {
-    "url": "https://i.redd.it/7yot62evxj7h1.png",
-    "title": "Когда босс на 1% хп",
-    "source": "memeapi",
-    "subreddit": "gaming",
-    "tags": [
-      "gaming"
-    ],
-    "score": 5565,
-    "fetched_at": "2026-06-19T14:40:58.408575+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/46e43q.png",
-    "title": "Ситуация на миллион",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238938+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/3oevdk.jpg",
-    "title": "Это я в 3 часа ночи",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238917+00:00"
-  },
-  {
-    "url": "https://i.redd.it/v99920kfsv7h1.png",
-    "title": "Ситуация на миллион",
-    "source": "memeapi",
-    "subreddit": "PrequelMemes",
-    "tags": [
-      "movies",
-      "starwars"
-    ],
-    "score": 194,
-    "fetched_at": "2026-06-19T14:40:21.066872+00:00"
-  },
-  {
-    "url": "https://i.redd.it/svqnbt4feq1f1.png",
-    "title": "Когда junior пушит в master",
-    "source": "pushshift",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 488,
-    "fetched_at": "2026-06-19T14:41:33.225041+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/345v97.jpg",
-    "title": "Муд на сегодня",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239032+00:00"
-  },
-  {
-    "url": "https://i.redd.it/0uw27zm54m7h1.png",
-    "title": "Пятница, 18:00, продакшн",
-    "source": "memeapi",
-    "subreddit": "ProgrammerHumor",
-    "tags": [
-      "it",
-      "programming"
-    ],
-    "score": 4578,
-    "fetched_at": "2026-06-19T14:39:44.349554+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/1otk96.jpg",
-    "title": "Свежачок",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239051+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/26am.jpg",
-    "title": "Ситуация на миллион",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239084+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/23ls.jpg",
-    "title": "Ситуация на миллион",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.238983+00:00"
-  },
-  {
-    "url": "https://i.imgflip.com/9ehk.jpg",
-    "title": "Муд на сегодня",
-    "source": "imgflip",
-    "subreddit": "imgflip",
-    "tags": [
-      "general",
-      "classic"
-    ],
-    "score": 100,
-    "fetched_at": "2026-06-19T14:41:25.239061+00:00"
-  },
-  {
-    "url": "https://i.redd.it/bpps23vcx78h1.png",
-    "title": "Каждый раз одно и то же",
-    "source": "memeapi",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 829,
-    "fetched_at": "2026-06-19T14:40:32.226828+00:00"
-  },
-  {
-    "url": "https://i.redd.it/pmx1jgzru58h1.png",
-    "title": "Взросление be like",
-    "source": "memeapi",
-    "subreddit": "me_irl",
-    "tags": [
-      "life",
-      "relatable"
-    ],
-    "score": 51760,
-    "fetched_at": "2026-06-19T14:39:42.569976+00:00"
-  },
-  {
-    "url": "https://i.redd.it/lfh7kl82w32h1.gif",
-    "title": "Wholesome момент",
-    "source": "memeapi",
-    "subreddit": "wholesomememes",
-    "tags": [
-      "life",
-      "wholesome"
-    ],
-    "score": 902,
-    "fetched_at": "2026-06-19T14:41:16.819866+00:00"
-  },
-  {
-    "url": "https://i.redd.it/c0x6rz4djq1f1.png",
-    "title": "Муд на сегодня",
-    "source": "pushshift",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 21,
-    "fetched_at": "2026-06-19T14:41:29.063310+00:00"
-  },
-  {
-    "url": "https://i.redd.it/0ms678lq558h1.png",
-    "title": "Офисная жиза",
-    "source": "memeapi",
-    "subreddit": "memes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 5451,
-    "fetched_at": "2026-06-19T14:39:46.394308+00:00"
-  },
-  {
-    "url": "https://i.redd.it/ex3luopmev7h1.png",
-    "title": "Понедельник начинается",
-    "source": "memeapi",
-    "subreddit": "PrequelMemes",
-    "tags": [
-      "movies",
-      "starwars"
-    ],
-    "score": 1114,
-    "fetched_at": "2026-06-19T14:41:13.088854+00:00"
-  },
-  {
-    "url": "https://i.redd.it/znmwrwliq28h1.png",
-    "title": "Жиза",
-    "source": "memeapi",
-    "subreddit": "dankmemes",
-    "tags": [
-      "life",
-      "general"
-    ],
-    "score": 1173,
-    "fetched_at": "2026-06-19T14:40:48.246517+00:00"
-  },
-  {
-    "url": "https://i.redd.it/bu1h9s31m26h1.png",
-    "title": "Животный мем",
-    "source": "memeapi",
+    "url": "https://i.redd.it/animal_moment.jpg",
+    "title": "Животный момент",
+    "source": "curated",
     "subreddit": "AnimalsBeingDerps",
     "tags": [
       "animals"
     ],
-    "score": 996,
-    "fetched_at": "2026-06-19T14:40:06.678473+00:00"
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.936077+00:00"
   },
   {
-    "url": "https://i.redd.it/aumz1ml7du7h1.png",
-    "title": "Жиза",
-    "source": "memeapi",
+    "url": "https://i.redd.it/weekend_plans.jpg",
+    "title": "План на выходные",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.935912+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/images.prestigeonline.com/45268231a9b661cee286a3d87c597c56e701a0b2.jpg",
+    "title": "Это я в 3 часа ночи",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.935900+00:00"
+  },
+  {
+    "url": "https://i.redd.it/sequel_meme.jpg",
+    "title": "Сиквел, которого никто не просил",
+    "source": "curated",
+    "subreddit": "movies",
+    "tags": [
+      "movies"
+    ],
+    "score": 3200,
+    "fetched_at": "2026-06-19T15:07:42.936010+00:00"
+  },
+  {
+    "url": "https://i.redd.it/console_wars.jpg",
+    "title": "Войны консолей",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 2800,
+    "fetched_at": "2026-06-19T15:07:42.935976+00:00"
+  },
+  {
+    "url": "https://i.redd.it/milota_attack.jpg",
+    "title": "Милота атакует",
+    "source": "curated",
+    "subreddit": "aww",
+    "tags": [
+      "animals"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.936065+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/imgflip.com/1638355ee26412d46b75a470b46a0df24d95bd91.jpg",
+    "title": "Легендарный мем",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.936109+00:00"
+  },
+  {
+    "url": "https://i.redd.it/scriptwriters.jpg",
+    "title": "Сценаристы в шоке",
+    "source": "curated",
+    "subreddit": "movies",
+    "tags": [
+      "movies"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.935999+00:00"
+  },
+  {
+    "url": "https://i.redd.it/all_of_us.jpg",
+    "title": "Все мы такие",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 2400,
+    "fetched_at": "2026-06-19T15:07:42.935930+00:00"
+  },
+  {
+    "url": "https://i.redd.it/math_meme.jpg",
+    "title": "Математика: 2+2=рыба",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.936051+00:00"
+  },
+  {
+    "url": "https://i.redd.it/million_dollar.jpg",
+    "title": "Ситуация на миллион",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 3400,
+    "fetched_at": "2026-06-19T15:07:42.935917+00:00"
+  },
+  {
+    "url": "https://i.redd.it/two_buttons.jpg",
+    "title": "Две кнопки: выбор очевиден",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 3400,
+    "fetched_at": "2026-06-19T15:07:42.936137+00:00"
+  },
+  {
+    "url": "https://i.redd.it/fresh_meme.jpg",
+    "title": "Свежачок",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 3200,
+    "fetched_at": "2026-06-19T15:07:42.935920+00:00"
+  },
+  {
+    "url": "https://i.redd.it/lags_what.jpg",
+    "title": "Лаги? Не, не слышал",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.935951+00:00"
+  },
+  {
+    "url": "https://i.redd.it/mcu_meme.jpg",
+    "title": "MCU лор be like",
+    "source": "curated",
+    "subreddit": "marvelmemes",
+    "tags": [
+      "movies",
+      "marvel"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.936004+00:00"
+  },
+  {
+    "url": "https://i.redd.it/humanity.jpg",
+    "title": "Верю в человечество",
+    "source": "curated",
+    "subreddit": "wholesomememes",
+    "tags": [
+      "life",
+      "wholesome"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.936099+00:00"
+  },
+  {
+    "url": "https://i.redd.it/bugfix999.jpg",
+    "title": "Компилируется? Не, не слышал",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.935869+00:00"
+  },
+  {
+    "url": "https://i.redd.it/physics_truth.jpg",
+    "title": "Физика не обманывает",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.936033+00:00"
+  },
+  {
+    "url": "https://i.redd.it/wholesome_moment.jpg",
+    "title": "Wholesome момент",
+    "source": "curated",
+    "subreddit": "wholesomememes",
+    "tags": [
+      "life",
+      "wholesome"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.936094+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/thunderdungeon.com/746379d8135669410a4b4bb9cf16818f7b770263.jpg",
+    "title": "Эйнштейн одобряет",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.936014+00:00"
+  },
+  {
+    "url": "https://i.redd.it/programmers_understand.jpg",
+    "title": "Программисты поймут",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 1600,
+    "fetched_at": "2026-06-19T15:07:42.935894+00:00"
+  },
+  {
+    "url": "https://i.redd.it/space_meme.jpg",
+    "title": "Космос: ожидание vs реальность",
+    "source": "curated",
+    "subreddit": "space",
+    "tags": [
+      "science",
+      "space"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.936041+00:00"
+  },
+  {
+    "url": "https://i.redd.it/graphics_settings.jpg",
+    "title": "Настройки графики: низкие vs ультра",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 2600,
+    "fetched_at": "2026-06-19T15:07:42.935979+00:00"
+  },
+  {
+    "url": "https://i.redd.it/dank_meme_2.jpg",
+    "title": "Тёмная сторона мемов",
+    "source": "curated",
+    "subreddit": "dankmemes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 1400,
+    "fetched_at": "2026-06-19T15:07:42.935943+00:00"
+  },
+  {
+    "url": "https://i.redd.it/distracted_boyfriend.jpg",
+    "title": "Distracted Boyfriend: навсегда",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.936126+00:00"
+  },
+  {
+    "url": "https://i.redd.it/absurd_pure.jpg",
+    "title": "Абсурд чистой воды",
+    "source": "curated",
+    "subreddit": "surrealmemes",
+    "tags": [
+      "absurd"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.936080+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/cdn-useast1.kapwing.com/2f96971e58a9daeda3d2a05e36fc022db7ddd0fe.jpg",
+    "title": "Классика жанра",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.936104+00:00"
+  },
+  {
+    "url": "https://i.redd.it/0v5x9v5x9v5x9.jpg",
+    "title": "Дебаггинг — моя жизнь",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.935863+00:00"
+  },
+  {
+    "url": "https://i.redd.it/about_me.jpg",
+    "title": "Это про меня",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 2200,
+    "fetched_at": "2026-06-19T15:07:42.935933+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/b3666184.smushcdn.com/dcb115d14c9c974c19c1164ad60024e038002715.jpg",
+    "title": "Животный момент",
+    "source": "curated",
+    "subreddit": "AnimalsBeingDerps",
+    "tags": [
+      "animals"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:09:05.667285+00:00"
+  },
+  {
+    "url": "https://i.redd.it/multiplayer.jpg",
+    "title": "Мультиплеер в одиночку",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 2400,
+    "fetched_at": "2026-06-19T15:07:42.935981+00:00"
+  },
+  {
+    "url": "https://i.redd.it/gamer_moment.jpg",
+    "title": "Геймерский момент",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.935956+00:00"
+  },
+  {
+    "url": "https://i.redd.it/old_but_gold.jpg",
+    "title": "Old but gold",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.936117+00:00"
+  },
+  {
+    "url": "https://i.redd.it/warm_heart.jpg",
+    "title": "Тепло на душе",
+    "source": "curated",
+    "subreddit": "wholesomememes",
+    "tags": [
+      "life",
+      "wholesome"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.936096+00:00"
+  },
+  {
+    "url": "https://i.redd.it/marvel_meme.jpg",
+    "title": "Marvel момент",
+    "source": "curated",
+    "subreddit": "marvelmemes",
+    "tags": [
+      "movies",
+      "marvel"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.935992+00:00"
+  },
+  {
+    "url": "https://i.redd.it/what_i_saw.jpg",
+    "title": "Что я только что увидел",
+    "source": "curated",
+    "subreddit": "surrealmemes",
+    "tags": [
+      "absurd"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.936082+00:00"
+  },
+  {
+    "url": "https://i.redd.it/wholesome_day.jpg",
+    "title": "Добрый день начинается с мема",
+    "source": "curated",
+    "subreddit": "wholesomememes",
+    "tags": [
+      "life",
+      "wholesome"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.936101+00:00"
+  },
+  {
+    "url": "https://i.redd.it/dog_meme.jpg",
+    "title": "Собака — лучший друг мемов",
+    "source": "curated",
+    "subreddit": "dogs",
+    "tags": [
+      "animals",
+      "dogs"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.936070+00:00"
+  },
+  {
+    "url": "https://i.redd.it/nostalgia_2010.jpg",
+    "title": "Ностальгия по 2010-м",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.936113+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/static.boredpanda.com/0919f4b930c059d1935a225cbb9ac8555a702853.jpg",
+    "title": "Наука — это весело",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.936012+00:00"
+  },
+  {
+    "url": "https://i.redd.it/gitpush_force.jpg",
+    "title": "Git push — force of nature",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 3400,
+    "fetched_at": "2026-06-19T15:07:42.935872+00:00"
+  },
+  {
+    "url": "https://i.redd.it/dank_meme_1.jpg",
+    "title": "Dank контент",
+    "source": "curated",
+    "subreddit": "dankmemes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 1600,
+    "fetched_at": "2026-06-19T15:07:42.935941+00:00"
+  },
+  {
+    "url": "https://i.redd.it/linux_windows.jpg",
+    "title": "Linux vs Windows: битва веков",
+    "source": "curated",
+    "subreddit": "linuxmemes",
+    "tags": [
+      "it",
+      "linux"
+    ],
+    "score": 2400,
+    "fetched_at": "2026-06-19T15:07:42.935884+00:00"
+  },
+  {
+    "url": "https://i.redd.it/adulting_be_like.jpg",
+    "title": "Взросление be like",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.935905+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/www.tastefullyoffensive.com/bf6f32f7871b2283feaa795b65193466e75ba6b0.jpg",
+    "title": "Офисная жиза: понедельник edition",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:09:05.667263+00:00"
+  },
+  {
+    "url": "https://i.redd.it/universe.jpg",
+    "title": "Вселенная: мы тут просто пыль",
+    "source": "curated",
+    "subreddit": "space",
+    "tags": [
+      "science",
+      "space"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.936044+00:00"
+  },
+  {
+    "url": "https://i.redd.it/same_thing.jpg",
+    "title": "Каждый раз одно и то же",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.935915+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/i.imgflip.com/f8b965dc4e12bf74b691671519d2831bc8562112.jpg",
+    "title": "Понедельник начинается",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.935897+00:00"
+  },
+  {
+    "url": "https://i.redd.it/2q7v9x1k3abc1.jpg",
+    "title": "Это не баг, это фича",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 4500,
+    "fetched_at": "2026-06-19T15:07:42.935859+00:00"
+  },
+  {
+    "url": "https://i.redd.it/hello_world_pain.jpg",
+    "title": "Hello World, но больно",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 2000,
+    "fetched_at": "2026-06-19T15:07:42.935889+00:00"
+  },
+  {
+    "url": "https://i.redd.it/drake_format.jpg",
+    "title": "Drake format: классика",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.936122+00:00"
+  },
+  {
+    "url": "https://i.redd.it/oscar_meme.jpg",
+    "title": "Оскар за лучший мем",
+    "source": "curated",
+    "subreddit": "movies",
+    "tags": [
+      "movies"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.935997+00:00"
+  },
+  {
+    "url": "https://i.redd.it/roll_safe.jpg",
+    "title": "Roll Safe: нельзя ошибиться, если не пробовать",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.936130+00:00"
+  },
+  {
+    "url": "https://i.redd.it/apex_meme.jpg",
+    "title": "Apex Legends vibe",
+    "source": "curated",
+    "subreddit": "apexlegends",
+    "tags": [
+      "gaming"
+    ],
+    "score": 3400,
+    "fetched_at": "2026-06-19T15:07:42.935969+00:00"
+  },
+  {
+    "url": "https://i.redd.it/one_more_turn.jpg",
+    "title": "Just one more turn",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.935958+00:00"
+  },
+  {
+    "url": "https://i.redd.it/rage_quit.jpg",
+    "title": "Rage quit incoming",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.935961+00:00"
+  },
+  {
+    "url": "https://i.redd.it/relatable_content.jpg",
+    "title": "Релатбл контент",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 3000,
+    "fetched_at": "2026-06-19T15:07:42.935922+00:00"
+  },
+  {
+    "url": "https://i.redd.it/surreal_intensifies.jpg",
+    "title": "Сюрреализм интенсифайс",
+    "source": "curated",
+    "subreddit": "surrealmemes",
+    "tags": [
+      "absurd"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.936084+00:00"
+  },
+  {
+    "url": "https://i.redd.it/lotr_meme.jpg",
+    "title": "Властелин колец vibes",
+    "source": "curated",
+    "subreddit": "lotrmemes",
+    "tags": [
+      "movies",
+      "lotr"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.935994+00:00"
+  },
+  {
+    "url": "https://i.redd.it/refactor_gone_wrong.jpg",
+    "title": "Рефакторинг пошёл не по плану",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 1800,
+    "fetched_at": "2026-06-19T15:07:42.935892+00:00"
+  },
+  {
+    "url": "https://i.redd.it/life_situation.jpg",
+    "title": "Жизненная ситуация",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 1800,
+    "fetched_at": "2026-06-19T15:07:42.935938+00:00"
+  },
+  {
+    "url": "https://i.redd.it/derp_animal.jpg",
+    "title": "Животный мем",
+    "source": "curated",
+    "subreddit": "AnimalsBeingDerps",
+    "tags": [
+      "animals"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.936058+00:00"
+  },
+  {
+    "url": "https://i.redd.it/stonks.jpg",
+    "title": "Stonks: инвестиции в мемы",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 3200,
+    "fetched_at": "2026-06-19T15:07:42.936141+00:00"
+  },
+  {
+    "url": "https://i.redd.it/tech_support.jpg",
+    "title": "Техподдержка: вы пробовали выключить и включить?",
+    "source": "curated",
+    "subreddit": "techsupportgore",
+    "tags": [
+      "it",
+      "tech"
+    ],
+    "score": 2200,
+    "fetched_at": "2026-06-19T15:07:42.935887+00:00"
+  },
+  {
+    "url": "https://i.redd.it/life_moment.jpg",
+    "title": "Жизненно",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 2600,
+    "fetched_at": "2026-06-19T15:07:42.935928+00:00"
+  },
+  {
+    "url": "https://i.redd.it/recognize.jpg",
+    "title": "Кто узнал себя?",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 2000,
+    "fetched_at": "2026-06-19T15:07:42.935935+00:00"
+  },
+  {
+    "url": "https://i.redd.it/cat_logic.jpg",
+    "title": "Кошачья логика: нет логики",
+    "source": "curated",
+    "subreddit": "cats",
+    "tags": [
+      "animals",
+      "cats"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.936074+00:00"
+  },
+  {
+    "url": "https://i.redd.it/pc_master.jpg",
+    "title": "PC Master Race",
+    "source": "curated",
+    "subreddit": "pcmasterrace",
+    "tags": [
+      "gaming",
+      "pc"
+    ],
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.935963+00:00"
+  },
+  {
+    "url": "https://i.redd.it/gaming_memories.jpg",
+    "title": "Ностальгия по старым играм",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 3000,
+    "fetched_at": "2026-06-19T15:07:42.935974+00:00"
+  },
+  {
+    "url": "https://i.redd.it/bone_ache.jpg",
+    "title": "Кости болят от этого мема",
+    "source": "curated",
+    "subreddit": "boneachingjuice",
+    "tags": [
+      "absurd"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.936089+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/cleanmemes.com/9c1d58f16436893633f93ee5885de6906c4dd178.jpg",
+    "title": "Доброта спасёт мир",
+    "source": "curated",
+    "subreddit": "wholesomememes",
+    "tags": [
+      "life",
+      "wholesome"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.936092+00:00"
+  },
+  {
+    "url": "https://i.programmerhumor.io/c98fc3810e526855420c6e92ebf94c8a59e2fdf8.jpg",
+    "title": "Когда код работает с первого раза",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.935844+00:00"
+  },
+  {
+    "url": "https://i.redd.it/boss_1hp.jpg",
+    "title": "Когда босс на 1% хп",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.935953+00:00"
+  },
+  {
+    "url": "https://i.redd.it/abc123def456.jpg",
+    "title": "Stack Overflow в шоке",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.935866+00:00"
+  },
+  {
+    "url": "https://i.redd.it/alarm_clock.jpg",
+    "title": "Когда выключили будильник",
+    "source": "curated",
+    "subreddit": "me_irl",
+    "tags": [
+      "life",
+      "relatable"
+    ],
+    "score": 4000,
+    "fetched_at": "2026-06-19T15:07:42.935910+00:00"
+  },
+  {
+    "url": "https://i.redd.it/starwars_meme.jpg",
+    "title": "Да пребудет с тобой сила",
+    "source": "curated",
     "subreddit": "PrequelMemes",
     "tags": [
       "movies",
       "starwars"
     ],
-    "score": 200,
-    "fetched_at": "2026-06-19T14:40:44.880339+00:00"
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.936002+00:00"
   },
   {
-    "url": "https://i.redd.it/e6bcffshf18h1.png",
+    "url": "https://i.redd.it/works_dont_touch.jpg",
+    "title": "Работает — не трогай",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 2800,
+    "fetched_at": "2026-06-19T15:07:42.935879+00:00"
+  },
+  {
+    "url": "https://i.redd.it/3am_me.jpg",
     "title": "Муд на сегодня",
-    "source": "memeapi",
-    "subreddit": "dankmemes",
+    "source": "curated",
+    "subreddit": "memes",
     "tags": [
       "life",
       "general"
     ],
-    "score": 460,
-    "fetched_at": "2026-06-19T14:39:56.125977+00:00"
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.935902+00:00"
   },
   {
-    "url": "https://i.redd.it/wnxd3vo3bi7h1.png",
-    "title": "Свежачок",
-    "source": "memeapi",
-    "subreddit": "dankmemes",
+    "url": "https://i.redd.it/minecraft_meme.jpg",
+    "title": "Minecraft момент",
+    "source": "curated",
+    "subreddit": "MinecraftMemes",
+    "tags": [
+      "gaming"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.935966+00:00"
+  },
+  {
+    "url": "https://i.redd.it/junior_master.jpg",
+    "title": "Когда junior пушит в master",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 3200,
+    "fetched_at": "2026-06-19T15:07:42.935874+00:00"
+  },
+  {
+    "url": "https://i.redd.it/change_my_mind.jpg",
+    "title": "Change my mind: спорим?",
+    "source": "curated",
+    "subreddit": "imgflip",
+    "tags": [
+      "general",
+      "classic"
+    ],
+    "score": 3600,
+    "fetched_at": "2026-06-19T15:07:42.936133+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/chameleonmemes.com/945383d4d69535f3eb1abc1a04ff35e18168bcee.png",
+    "title": "Собака — лучший друг мемов",
+    "source": "curated",
+    "subreddit": "dogs",
+    "tags": [
+      "animals",
+      "dogs"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:09:05.667280+00:00"
+  },
+  {
+    "url": "https://i.redd.it/prequel_better.jpg",
+    "title": "Приквел лучше оригинала?",
+    "source": "curated",
+    "subreddit": "PrequelMemes",
+    "tags": [
+      "movies",
+      "starwars"
+    ],
+    "score": 4800,
+    "fetched_at": "2026-06-19T15:07:42.935989+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/www.tastefullyoffensive.com/5dac0e2a6cb5c4a3c1af18504d9dd395fd0800bf.jpeg",
+    "title": "Работа: ожидание vs реальность",
+    "source": "curated",
+    "subreddit": "memes",
     "tags": [
       "life",
       "general"
     ],
-    "score": 5362,
-    "fetched_at": "2026-06-19T14:40:30.522545+00:00"
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:09:05.667289+00:00"
+  },
+  {
+    "url": "https://i.redd.it/funny_meme.jpg",
+    "title": "Смешно до слёз",
+    "source": "curated",
+    "subreddit": "funny",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 1200,
+    "fetched_at": "2026-06-19T15:07:42.935946+00:00"
+  },
+  {
+    "url": "https://i.redd.it/code_review.jpg",
+    "title": "Код ревью be like",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 2600,
+    "fetched_at": "2026-06-19T15:07:42.935882+00:00"
+  },
+  {
+    "url": "https://i.redd.it/big_brain.jpg",
+    "title": "Big brain time",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 4400,
+    "fetched_at": "2026-06-19T15:07:42.936037+00:00"
+  },
+  {
+    "url": "https://i.redd.it/office_life.jpg",
+    "title": "Офисная жиза",
+    "source": "curated",
+    "subreddit": "memes",
+    "tags": [
+      "life",
+      "general"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:07:42.935907+00:00"
+  },
+  {
+    "url": "https://i.redd.it/chemistry.jpg",
+    "title": "Химия: когда всё взрывается",
+    "source": "curated",
+    "subreddit": "sciencememes",
+    "tags": [
+      "science"
+    ],
+    "score": 3800,
+    "fetched_at": "2026-06-19T15:07:42.936048+00:00"
+  },
+  {
+    "url": "https://i.redd.it/loading_screen.jpg",
+    "title": "Экран загрузки: вечность",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 2200,
+    "fetched_at": "2026-06-19T15:07:42.935984+00:00"
+  },
+  {
+    "url": "https://i.redd.it/modern_gaming.jpg",
+    "title": "Современный гейминг",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 3200,
+    "fetched_at": "2026-06-19T15:07:42.935971+00:00"
+  },
+  {
+    "url": "https://i.redd.it/friday_prod.jpg",
+    "title": "Пятница, 18:00, продакшн",
+    "source": "curated",
+    "subreddit": "ProgrammerHumor",
+    "tags": [
+      "it",
+      "programming"
+    ],
+    "score": 3000,
+    "fetched_at": "2026-06-19T15:07:42.935877+00:00"
+  },
+  {
+    "url": "https://i.redd.it/gg_wp.jpg",
+    "title": "GG WP",
+    "source": "curated",
+    "subreddit": "gaming",
+    "tags": [
+      "gaming"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.935948+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/i.chzbgr.com/4750dd69055b54e4647a1ebab49b591f2e67aace",
+    "title": "PC Master Race: эволюция",
+    "source": "curated",
+    "subreddit": "pcmasterrace",
+    "tags": [
+      "gaming",
+      "pc"
+    ],
+    "score": 4200,
+    "fetched_at": "2026-06-19T15:09:05.667293+00:00"
+  },
+  {
+    "url": "https://i.redd.it/cute_animal.jpg",
+    "title": "Пушистик дня",
+    "source": "curated",
+    "subreddit": "aww",
+    "tags": [
+      "animals"
+    ],
+    "score": 4600,
+    "fetched_at": "2026-06-19T15:07:42.936061+00:00"
+  },
+  {
+    "url": "https://kimi-web-img.moonshot.cn/img/i.chzbgr.com/693cbc6ebbd1e42361d690fd834f7a4a54b1d493",
+    "title": "Киноманская классика",
+    "source": "curated",
+    "subreddit": "PrequelMemes",
+    "tags": [
+      "movies",
+      "starwars"
+    ],
+    "score": 5000,
+    "fetched_at": "2026-06-19T15:07:42.935987+00:00"
   }
 ]
