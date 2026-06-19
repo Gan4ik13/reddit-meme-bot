@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Meme Telegram Bot — Render.com deployment.
-
-Постит мемы из локальной JSON-базы memes.json.
-Базу обновляешь скриптом update_memes.py раз в неделю.
-"""
+"""Meme Telegram Bot — Render.com deployment."""
 
 import os
 import sys
@@ -28,14 +24,48 @@ logging.basicConfig(
 )
 log = logging.getLogger("bot")
 
+# ============================================================
+#  Конфигурация — ТОЛЬКО из env vars, без fallback!
+# ============================================================
+
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 TG_CHANNEL = os.environ.get("TG_CHANNEL", "")
 PORT = int(os.environ.get("PORT", 8080))
 
+if not TG_BOT_TOKEN:
+    log.error("TG_BOT_TOKEN пуст! Задай переменную в Render Environment.")
+    sys.exit(1)
+
+if not TG_CHANNEL:
+    log.error("TG_CHANNEL пуст! Задай переменную в Render Environment.")
+    sys.exit(1)
+
+# Проверка токена через getMe при старте
+def _validate_token():
+    url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/getMe"
+    try:
+        resp = requests.get(url, timeout=10)
+        data = resp.json()
+        if data.get("ok"):
+            bot_info = data["result"]
+            log.info("Токен валиден. Бот: @%s (id=%s)", bot_info["username"], bot_info["id"])
+            return True
+        else:
+            log.error("Токен НЕВАЛИДЕН! Telegram ответил: %s", data.get("description"))
+            return False
+    except Exception as e:
+        log.error("Ошибка проверки токена: %s", e)
+        return False
+
+if not _validate_token():
+    sys.exit(1)
+
+log.info("Канал для публикации: %s", TG_CHANNEL)
+
 MEMES_PATH = Path(__file__).parent / "memes.json"
 
 # ============================================================
-#  SQLite — трекинг отправленных мемов
+#  SQLite
 # ============================================================
 
 DB_PATH = Path(os.environ.get("DATA_DIR", "data")) / "bot.db"
@@ -71,7 +101,7 @@ def _sent_count() -> int:
 
 
 # ============================================================
-#  Мемы из JSON
+#  Мемы
 # ============================================================
 
 _memes_cache: list[dict] = []
@@ -84,7 +114,7 @@ def _load_memes() -> list[dict]:
     if MEMES_PATH.exists():
         with open(MEMES_PATH, "r", encoding="utf-8") as f:
             _memes_cache = json.load(f)
-        log.info("Загружено %d мемов из базы", len(_memes_cache))
+        log.info("Загружено %d мемов", len(_memes_cache))
     else:
         log.error("memes.json не найден!")
         _memes_cache = []
@@ -124,7 +154,9 @@ def _send_photo(image_url: str, caption: str) -> bool:
         if data.get("ok"):
             return True
         error = data.get("description", "")
-        log.error("Telegram: %s", error[:200])
+        log.error("Telegram API error: %s", error[:200])
+    except requests.exceptions.HTTPError as e:
+        log.error("HTTP %s: %s", e.response.status_code, e.response.text[:200])
     except Exception as e:
         log.error("Send error: %s", e)
     return False
@@ -138,7 +170,7 @@ def job_publishing():
     log.info("=== PUBLISHING ===")
     meme = _get_next_meme()
     if not meme:
-        log.warning("Нет мемов в базе!")
+        log.warning("Нет мемов!")
         return
 
     url = meme["url"]
@@ -147,13 +179,13 @@ def job_publishing():
 
     if _send_photo(url, title):
         _mark_sent(url)
-        log.info("Опубликовано! Отправлено: %d/%d", _sent_count(), len(_load_memes()))
+        log.info("Опубликовано! %d/%d", _sent_count(), len(_load_memes()))
     else:
         log.error("Не удалось отправить")
 
 
 # ============================================================
-#  aiohttp
+#  HTTP сервер
 # ============================================================
 
 async def handle_health(request):
@@ -184,17 +216,9 @@ start_time = datetime.now()
 
 
 def main():
-    if not TG_BOT_TOKEN:
-        log.error("TG_BOT_TOKEN не задан!")
-        sys.exit(1)
-    if not TG_CHANNEL:
-        log.error("TG_CHANNEL не задан!")
-        sys.exit(1)
-
     _init_db()
     _load_memes()
-    log.info("Бот запущен. Канал: %s", TG_CHANNEL)
-    log.info("Мемов в базе: %d, отправлено: %d", len(_load_memes()), _sent_count())
+    log.info("Мемов: %d, отправлено: %d", len(_load_memes()), _sent_count())
 
     app = aiohttp.web.Application()
     app.router.add_get("/", handle_root)
