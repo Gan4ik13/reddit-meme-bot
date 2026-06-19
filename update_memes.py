@@ -12,7 +12,7 @@ import random
 import time
 import re
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 
@@ -41,7 +41,7 @@ def fetch_with_retry(url, headers=None, timeout=15, retries=3):
             return resp
         except requests.exceptions.Timeout:
             log(f"  Таймаут {attempt+1}/{retries}: {url[:60]}...")
-            time.sleep(2 ** attempt)  # exponential backoff
+            time.sleep(2 ** attempt)
         except Exception as e:
             log(f"  Ошибка {attempt+1}/{retries}: {e}")
             time.sleep(1)
@@ -71,7 +71,6 @@ def fetch_meme_api(count: int = 50) -> list[dict]:
             d = resp.json()
             if d.get("nsfw") or not d.get("url"):
                 continue
-            # Проверяем что URL — картинка
             img_url = d["url"]
             if not any(img_url.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
                 continue
@@ -88,7 +87,7 @@ def fetch_meme_api(count: int = 50) -> list[dict]:
                 "subreddit": d.get("subreddit", sub),
                 "tags": [],
                 "score": d.get("ups", 50),
-                "fetched_at": datetime.utcnow().isoformat(),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
             })
         except Exception as e:
             log(f"  MemeAPI parse error: {e}")
@@ -117,9 +116,8 @@ def fetch_imgflip() -> list[dict]:
             return []
 
         memes = []
-        templates = data["data"]["memes"][:30]  # топ-30 популярных
+        templates = data["data"]["memes"][:30]
 
-        # Фильтруем только те, что выглядят как мемы (не просто картинки)
         meme_keywords = ["drake", "distracted", "change my mind", "roll safe",
                         "mocking", "always has been", "is this a pigeon",
                         "two buttons", "uno", "panik", "sad pablo",
@@ -129,7 +127,6 @@ def fetch_imgflip() -> list[dict]:
 
         for t in templates:
             name = t.get("name", "").lower()
-            # Берём шаблоны с ключевыми словами мемов
             if any(kw in name for kw in meme_keywords) or t.get("box_count", 0) >= 2:
                 img_url = t.get("url", "")
                 if not img_url:
@@ -140,8 +137,8 @@ def fetch_imgflip() -> list[dict]:
                     "source": "imgflip",
                     "subreddit": "imgflip",
                     "tags": [],
-                    "score": 100,  # популярные = высокий score
-                    "fetched_at": datetime.utcnow().isoformat(),
+                    "score": 100,
+                    "fetched_at": datetime.now(timezone.utc).isoformat(),
                 })
 
         log(f"Imgflip: собрано {len(memes)} шаблонов")
@@ -171,9 +168,8 @@ def fetch_pushshift(sub: str, limit: int = 15) -> list[dict]:
             if not img_url:
                 continue
             if not any(img_url.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
-                # Пробуем preview
                 if "reddit" in img_url and "/comments/" in img_url:
-                    continue  # self-post
+                    continue
                 continue
 
             title = p.get("title", "Мем").strip()
@@ -188,7 +184,7 @@ def fetch_pushshift(sub: str, limit: int = 15) -> list[dict]:
                 "subreddit": sub,
                 "tags": [],
                 "score": p.get("score", 0),
-                "fetched_at": datetime.utcnow().isoformat(),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
             })
         log(f"Pushshift r/{sub}: {len(memes)} мемов")
         return memes
@@ -201,10 +197,9 @@ def fetch_pushshift(sub: str, limit: int = 15) -> list[dict]:
 #  Источник 4: Reddit JSON с прокси/задержкой (fallback)
 # -----------------------------------------------------------
 
-def fetch_reddit_json(sub: str, limit: int = 15) -> list[dict]:
+def fetch_reddit_json(sub: str, limit: int = 10) -> list[dict]:
     """Прямой Reddit JSON — с большими таймаутами и задержками."""
     url = f"https://www.reddit.com/r/{sub}/hot.json?limit={limit}"
-    # Большой таймаут и задержка чтобы не забанили
     time.sleep(2)
     resp = fetch_with_retry(url, timeout=25, retries=2)
     if not resp or resp.status_code != 200:
@@ -240,7 +235,7 @@ def fetch_reddit_json(sub: str, limit: int = 15) -> list[dict]:
                 "subreddit": sub,
                 "tags": [],
                 "score": p.get("score", 0),
-                "fetched_at": datetime.utcnow().isoformat(),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
             })
         log(f"Reddit r/{sub}: {len(memes)} мемов")
         return memes
@@ -254,37 +249,30 @@ def fetch_reddit_json(sub: str, limit: int = 15) -> list[dict]:
 # ============================================================
 
 TAG_MAP = {
-    # IT
     "ProgrammerHumor": ["it", "programming"],
     "coding": ["it", "programming"],
     "linuxmemes": ["it", "linux"],
     "techsupportgore": ["it", "tech"],
     "pcmasterrace": ["gaming", "pc"],
-    # Жизнь / Общие
     "memes": ["life", "general"],
     "dankmemes": ["life", "general"],
     "me_irl": ["life", "relatable"],
     "funny": ["life", "general"],
     "wholesomememes": ["life", "wholesome"],
-    # Игры
     "gaming": ["gaming"],
     "apexlegends": ["gaming"],
     "MinecraftMemes": ["gaming"],
-    # Кино
     "PrequelMemes": ["movies", "starwars"],
     "marvelmemes": ["movies", "marvel"],
     "lotrmemes": ["movies", "lotr"],
-    # Наука / Абсурд
     "sciencememes": ["science"],
     "space": ["science", "space"],
     "surrealmemes": ["absurd"],
     "boneachingjuice": ["absurd"],
-    # Животные
     "AnimalsBeingDerps": ["animals"],
     "cats": ["animals", "cats"],
     "dogs": ["animals", "dogs"],
     "aww": ["animals"],
-    # Imgflip
     "imgflip": ["general", "classic"],
 }
 
@@ -308,8 +296,37 @@ def assign_tags(memes: list[dict]) -> list[dict]:
 
 
 def filter_quality(memes: list[dict]) -> list[dict]:
-    """Фильтр: минимум 20 upvotes, не слишком старые."""
     return [m for m in memes if m.get("score", 0) >= 20]
+
+
+# ============================================================
+#  Проверка "читаемости" заголовка
+# ============================================================
+
+def is_readable_title(title: str) -> bool:
+    """Проверяет, что заголовок читаемый (не camelCase, не сплошные буквы)."""
+    if not title or len(title) < 3:
+        return False
+
+    # Считаем пробелы и знаки препинания
+    spaces = title.count(" ")
+    punctuation = sum(1 for c in title if c in ".,!?;:-")
+
+    # Если нет пробелов и мало знаков препинания — скорее всего camelCase или сплошной текст
+    if spaces == 0 and punctuation == 0:
+        return False
+
+    # Если длина слов средняя > 25 символов — скорее всего сплошной текст
+    words = title.split()
+    if words and sum(len(w) for w in words) / len(words) > 25:
+        return False
+
+    # Если больше 70% заглавных букв — капс или camelCase
+    letters = [c for c in title if c.isalpha()]
+    if letters and sum(1 for c in letters if c.isupper()) / len(letters) > 0.7:
+        return False
+
+    return True
 
 
 WITTY_TEMPLATES = {
@@ -324,6 +341,10 @@ WITTY_TEMPLATES = {
         "Git push — force of nature",
         "Программисты поймут",
         "Это не баг, это фича",
+        "Код ревью be like",
+        "Когда junior пушит в master",
+        "Пятница, 18:00, продакшн",
+        "Работает — не трогай",
     ],
     "programming": [
         "Код ревью be like",
@@ -392,17 +413,19 @@ WITTY_TEMPLATES = {
         "Ностальгия по 2010-м",
         "Old but gold",
     ],
+    "relatable": [
+        "Все мы такие",
+        "Это про меня",
+        "Кто узнал себя?",
+        "Жизненная ситуация",
+    ],
 }
 
 
 def generate_witty_caption(base_title: str, tags: list[str]) -> str:
     """Генерирует короткую остроумную подпись."""
-    # Если заголовок короткий и не generic — оставляем
-    if len(base_title) <= 60 and base_title not in ["Мем", "", " ", "Meme"]:
-        # Проверяем что это не просто название сабреддита
-        if not base_title.lower().startswith(("r/", "me_irl")):
-            return base_title
-
+    # Если заголовок читаемый и не слишком длинный — оставляем (переводим на русский нельзя, но можно оставить)
+    # Но лучше всегда генерировать русскую подпись для канала
     candidates = []
     for tag in tags:
         candidates.extend(WITTY_TEMPLATES.get(tag, WITTY_TEMPLATES["general"]))
@@ -413,14 +436,11 @@ def generate_witty_caption(base_title: str, tags: list[str]) -> str:
 
 
 def enrich_captions(memes: list[dict]) -> list[dict]:
+    """Заменяем ВСЕ заголовки на остроумные русские подписи."""
     for m in memes:
-        title = m.get("title", "")
         tags = m.get("tags", ["general"])
-        if len(title) > 80 or title in ["", " ", "Мем", "Meme"] or title.lower().startswith("me_irl"):
-            m["title"] = generate_witty_caption(title, tags)
-        else:
-            if len(title) > 100:
-                m["title"] = title[:97] + "..."
+        # Всегда генерируем новую подпись — так надёжнее
+        m["title"] = generate_witty_caption(m.get("title", ""), tags)
     return memes
 
 
@@ -452,7 +472,7 @@ def main():
     reddit_subs = ["dankmemes", "me_irl", "PrequelMemes", "AnimalsBeingDerps"]
     for sub in reddit_subs:
         all_memes.extend(fetch_reddit_json(sub, limit=10))
-        time.sleep(3)  # Большая задержка чтобы не забанили
+        time.sleep(3)
 
     log(f"Всего собрано: {len(all_memes)}")
 
