@@ -398,6 +398,26 @@ async def handle_root(request):
     })
 
 
+async def handle_burst(request):
+    loop = asyncio.get_event_loop()
+
+    def _burst():
+        count = 0
+        for _ in range(10):
+            meme = _get_next_meme()
+            if not meme:
+                break
+            caption = _build_caption(meme)
+            if _send_photo(meme["url"], caption):
+                _mark_sent(meme["url"], ",".join(meme.get("tags", [])))
+                count += 1
+            time.sleep(2)
+        return count
+
+    sent = await loop.run_in_executor(None, _burst)
+    return aiohttp.web.json_response({"status": "ok", "sent": sent})
+
+
 async def self_ping():
     while True:
         await asyncio.sleep(300)
@@ -425,6 +445,7 @@ def main():
     app = aiohttp.web.Application()
     app.router.add_get("/", handle_root)
     app.router.add_get("/health", handle_health)
+    app.router.add_get("/burst", handle_burst)
 
     runner = aiohttp.web.AppRunner(app)
 
