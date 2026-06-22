@@ -276,7 +276,6 @@ def _send_photo(image_url: str, caption: str) -> bool:
         "chat_id": TG_CHANNEL,
         "photo": image_url,
         "caption": caption,
-        "parse_mode": "HTML",
         "reply_markup": json.dumps(keyboard),
     }
 
@@ -315,7 +314,6 @@ def _send_as_document(image_url: str, caption: str) -> bool:
         "chat_id": TG_CHANNEL,
         "document": image_url,
         "caption": caption,
-        "parse_mode": "HTML",
         "reply_markup": json.dumps(keyboard),
     }
     try:
