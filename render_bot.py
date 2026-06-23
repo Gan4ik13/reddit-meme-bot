@@ -41,6 +41,7 @@ log = logging.getLogger("bot")
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "").strip()
 TG_CHANNEL = os.environ.get("TG_CHANNEL", "").strip()
 PORT = int(os.environ.get("PORT", 8080))
+RENDER_URL = os.environ.get("RENDER_EXTERNAL_URL", "").strip()
 
 if not TG_BOT_TOKEN:
     log.error("TG_BOT_TOKEN не задан!")
@@ -89,7 +90,7 @@ MEMES_PATH = Path(__file__).parent / "memes.json"
 DB_PATH = Path(os.environ.get("DATA_DIR", "data")) / "bot.db"
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-_conn = sqlite3.connect(str(DB_PATH), check_same_thread=False)
+_conn = sqlite3.connect(str(DB_PATH), check_same_thread=False, timeout=5)
 _conn.row_factory = sqlite3.Row
 
 
@@ -422,11 +423,12 @@ async def self_ping():
     while True:
         await asyncio.sleep(300)
         try:
+            url = RENDER_URL or f"http://localhost:{PORT}"
             async with aiohttp.ClientSession() as session:
-                async with session.get(f"http://localhost:{PORT}/health") as resp:
-                    pass
-        except Exception:
-            pass
+                async with session.get(f"{url}/health", timeout=10) as resp:
+                    log.info("Self-ping: %s", resp.status)
+        except Exception as e:
+            log.debug("Self-ping: %s", e)
 
 
 # ============================================================
